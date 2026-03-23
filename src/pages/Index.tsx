@@ -1,16 +1,31 @@
-// Update this page (the content is just a fallback if you fail to update the page)
+import HeroSection from "@/components/HeroSection";
+import TripSection from "@/components/TripSection";
+import { trips } from "@/data/trips";
 
-// IMPORTANT: Fully REPLACE this with your own code
-const PlaceholderIndex = () => {
-  // PLACEHOLDER: Replace this entire return statement with the user's app.
-  // The inline background color is intentionally not part of the design system.
+const Index = () => {
+  const upcoming = trips.filter((t) => t.status === "upcoming");
+  const past = trips.filter((t) => t.status === "past");
+
   return (
-    <div className="flex min-h-screen items-center justify-center" style={{ backgroundColor: '#fcfbf8' }}>
-      <img data-lovable-blank-page-placeholder="REMOVE_THIS" src="/placeholder.svg" alt="Your app will live here!" />
+    <div className="min-h-screen bg-background">
+      <HeroSection />
+      <TripSection
+        title="Upcoming Adventures"
+        subtitle="What's Next"
+        trips={upcoming}
+      />
+      <TripSection
+        title="Past Journeys"
+        subtitle="Where I've Been"
+        trips={past}
+      />
+      <footer className="border-t border-border py-10 text-center">
+        <p className="font-body text-sm text-muted-foreground">
+          © 2026 Wanderlust — A Personal Travel Journal
+        </p>
+      </footer>
     </div>
   );
 };
-
-const Index = PlaceholderIndex;
 
 export default Index;
