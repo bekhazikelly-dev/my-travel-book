@@ -3,6 +3,14 @@ import santoriniImg from "@/assets/santorini.jpg";
 import peruImg from "@/assets/peru.jpg";
 import baliImg from "@/assets/bali.jpg";
 
+export interface LocationPin {
+  name: string;
+  lat: number;
+  lng: number;
+  emoji: string;
+  day: number;
+}
+
 export interface ItineraryDay {
   day: number;
   title: string;
@@ -18,6 +26,7 @@ export interface Trip {
   image: string;
   description: string;
   itinerary: ItineraryDay[];
+  locations?: LocationPin[];
 }
 
 export const trips: Trip[] = [
