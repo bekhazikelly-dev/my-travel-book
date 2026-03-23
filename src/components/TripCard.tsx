@@ -20,7 +20,10 @@ const TripCard = ({ trip, index }: TripCardProps) => {
       transition={{ duration: 0.6, delay: index * 0.1 }}
       className="group overflow-hidden rounded-xl border border-border bg-card shadow-sm transition-shadow hover:shadow-md"
     >
-      <div className="relative h-56 overflow-hidden sm:h-64">
+      <div
+        className="relative h-56 overflow-hidden sm:h-64 cursor-pointer"
+        onClick={() => navigate(`/trip/${trip.id}`)}
+      >
         <img
           src={trip.image}
           alt={trip.destination}
