@@ -1,6 +1,7 @@
 import { useState } from "react";
+import { useNavigate } from "react-router-dom";
 import { motion, AnimatePresence } from "framer-motion";
-import { ChevronDown, Calendar, MapPin } from "lucide-react";
+import { ChevronDown, Calendar, MapPin, ExternalLink } from "lucide-react";
 import type { Trip } from "@/data/trips";
 
 interface TripCardProps {
@@ -10,7 +11,7 @@ interface TripCardProps {
 
 const TripCard = ({ trip, index }: TripCardProps) => {
   const [expanded, setExpanded] = useState(false);
-
+  const navigate = useNavigate();
   return (
     <motion.div
       initial={{ opacity: 0, y: 40 }}
@@ -19,7 +20,10 @@ const TripCard = ({ trip, index }: TripCardProps) => {
       transition={{ duration: 0.6, delay: index * 0.1 }}
       className="group overflow-hidden rounded-xl border border-border bg-card shadow-sm transition-shadow hover:shadow-md"
     >
-      <div className="relative h-56 overflow-hidden sm:h-64">
+      <div
+        className="relative h-56 overflow-hidden sm:h-64 cursor-pointer"
+        onClick={() => navigate(`/trip/${trip.id}`)}
+      >
         <img
           src={trip.image}
           alt={trip.destination}
