@@ -1,11 +1,24 @@
 import { motion } from "framer-motion";
-import type { Trip } from "@/data/trips";
+import { ExternalLink } from "lucide-react";
+import type { Trip, LocationPin } from "@/data/trips";
 
 interface TripItineraryProps {
   trip: Trip;
 }
 
+const findLocation = (activity: string, locations: LocationPin[], day: number): LocationPin | undefined => {
+  return locations.find(
+    (loc) => loc.day === day && activity.toLowerCase().includes(loc.name.toLowerCase())
+  );
+};
+
+const getGoogleMapsUrl = (loc: LocationPin): string => {
+  return `https://www.google.com/maps/search/?api=1&query=${loc.lat},${loc.lng}&query_place_id=${encodeURIComponent(loc.name + " Athens")}`;
+};
+
 const TripItinerary = ({ trip }: TripItineraryProps) => {
+  const locations = trip.locations || [];
+
   return (
     <div>
       <h2 className="font-display text-xl font-bold text-foreground mb-1">
@@ -33,14 +46,29 @@ const TripItinerary = ({ trip }: TripItineraryProps) => {
               {day.title}
             </h3>
             <ul className="mt-2 space-y-2">
-              {day.activities.map((activity, j) => (
-                <li
-                  key={j}
-                  className="font-body text-sm leading-relaxed text-muted-foreground"
-                >
-                  {activity}
-                </li>
-              ))}
+              {day.activities.map((activity, j) => {
+                const loc = findLocation(activity, locations, day.day);
+                if (loc) {
+                  return (
+                    <li key={j}>
+                      <a
+                        href={getGoogleMapsUrl(loc)}
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        className="group/link flex items-start gap-1.5 font-body text-sm leading-relaxed text-muted-foreground transition-colors hover:text-primary"
+                      >
+                        <span>{activity}</span>
+                        <ExternalLink className="mt-1 h-3 w-3 shrink-0 opacity-0 transition-opacity group-hover/link:opacity-100 text-primary" />
+                      </a>
+                    </li>
+                  );
+                }
+                return (
+                  <li key={j} className="font-body text-sm leading-relaxed text-muted-foreground">
+                    {activity}
+                  </li>
+                );
+              })}
             </ul>
           </motion.div>
         ))}
