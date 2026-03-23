@@ -1,4 +1,4 @@
-import tokyoImg from "@/assets/tokyo.jpg";
+import athensImg from "@/assets/athens.jpg";
 import santoriniImg from "@/assets/santorini.jpg";
 import peruImg from "@/assets/peru.jpg";
 import baliImg from "@/assets/bali.jpg";
@@ -22,18 +22,53 @@ export interface Trip {
 
 export const trips: Trip[] = [
   {
-    id: "tokyo-2026",
-    destination: "Tokyo",
-    country: "Japan",
-    dates: "Apr 15 – Apr 28, 2026",
+    id: "athens-2026",
+    destination: "Athens",
+    country: "Greece",
+    dates: "Mar 26 – Mar 29, 2026",
     status: "upcoming",
-    image: tokyoImg,
-    description: "Cherry blossom season exploration through temples, street food, and neon-lit nights.",
+    image: athensImg,
+    description: "A girls' weekend of rooftop dining, Acropolis exploring, beach vibes, and spa retreats in the heart of Athens.",
     itinerary: [
-      { day: 1, title: "Arrival & Shibuya", activities: ["Land at Narita Airport", "Check into hotel in Shinjuku", "Evening walk through Shibuya Crossing"] },
-      { day: 2, title: "Temples & Gardens", activities: ["Meiji Shrine morning visit", "Harajuku street exploration", "Yoyogi Park picnic under cherry blossoms"] },
-      { day: 3, title: "Tsukiji & Ginza", activities: ["Tsukiji Outer Market breakfast", "TeamLab Borderless", "Ginza shopping district"] },
-      { day: 4, title: "Day Trip to Kamakura", activities: ["Great Buddha of Kamakura", "Hase-dera Temple", "Beach walk at Yuigahama"] },
+      {
+        day: 1,
+        title: "Arrival & Rooftop Magic 🌆",
+        activities: [
+          "3:00 PM — Late lunch at Mavro Provato (modern Greek meze)",
+          "5:00 PM — Golden hour stroll through National Garden & Syntagma Square",
+          "6:30 PM — Coffee at the Numismatic Museum Café (hidden courtyard oasis)",
+          "8:30 PM — Dinner at Hill Athens Rooftop Restaurant (Acropolis views)",
+        ],
+      },
+      {
+        day: 2,
+        title: "Culture, Breads & Beach 🏖️",
+        activities: [
+          "9:30 AM — Artisanal pastries at KORA Kolonaki (sea salt croissants!)",
+          "11:00 AM — Explore the Acropolis & Parthenon",
+          "1:00 PM — Legendary kebab lunch at O Thanasis",
+          "2:30 PM — Taxi to Vouliagmeni Coast (sunbeds & crystal clear water)",
+          "9:00 PM — Pangrati bar crawl: Chelsea Hotel → ZIGGY Cocktail Bar",
+        ],
+      },
+      {
+        day: 3,
+        title: "Rainy Day Glow-Up 🕯️",
+        activities: [
+          "10:30 AM — Aesthetic brunch at Ohh Boy (banoffee pie!)",
+          "1:00 PM — Spa retreat at Athens Divine Spa & Massage",
+          "3:30 PM — Acropolis Museum (glass floors over ancient ruins)",
+          "8:00 PM — Fancy dinner at THE BOTANY (views of Temple of Zeus)",
+        ],
+      },
+      {
+        day: 4,
+        title: "Final Sips & Departure ☕",
+        activities: [
+          "7:30 AM — Last coffee at KROSS Coffee Roasters, Pangrati",
+          "9:00 AM — Departure",
+        ],
+      },
     ],
   },
   {
