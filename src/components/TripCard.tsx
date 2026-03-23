@@ -11,7 +11,7 @@ interface TripCardProps {
 
 const TripCard = ({ trip, index }: TripCardProps) => {
   const [expanded, setExpanded] = useState(false);
-
+  const navigate = useNavigate();
   return (
     <motion.div
       initial={{ opacity: 0, y: 40 }}
