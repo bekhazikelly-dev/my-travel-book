@@ -1,6 +1,7 @@
 import { useState } from "react";
+import { useNavigate } from "react-router-dom";
 import { motion, AnimatePresence } from "framer-motion";
-import { ChevronDown, Calendar, MapPin } from "lucide-react";
+import { ChevronDown, Calendar, MapPin, ExternalLink } from "lucide-react";
 import type { Trip } from "@/data/trips";
 
 interface TripCardProps {
