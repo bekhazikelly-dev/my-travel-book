@@ -45,7 +45,7 @@ export const trips: Trip[] = [
     description: "A girls' weekend of rooftop dining, Acropolis exploring, beach vibes, and spa retreats in the heart of Athens.",
     homeBase: {
       label: "House",
-      url: "https://www.google.com/maps/place/Iofontos+2,+Athina+116+34,+Greece/@37.9734859,23.7400737,15z",
+      url: "https://www.google.com/maps/place/Iofontos+2,+Athina+116+34,+Greece/@37.9696446,23.7471297,17.1z/data=!4m6!3m5!1s0x14a1bd42def7dacf:0x781b0be1af04602a!8m2!3d37.9712555!4d23.7500953!16s%2Fg%2F11sxy6ph22?entry=ttu&g_ep=EgoyMDI2MDMxOC4xIKXMDSoASAFQAw%3D%3D",
     },
     itinerary: [
       {
@@ -111,47 +111,6 @@ export const trips: Trip[] = [
       { name: "Peggy Sue", lat: 37.9539409, lng: 23.7151041, emoji: "🍸", day: 3, url: "https://www.google.com/maps/place/Peggy+Sue/@37.9539409,23.7151041" },
       { name: "THE BOTANY", lat: 37.9693908, lng: 23.7313817, emoji: "🍷", day: 3, url: "https://www.google.com/maps/place/The+Botany+Roof+Garden+at+Acropolis/@37.9693908,23.7313817" },
       { name: "KROSS Coffee Roasters", lat: 37.9670, lng: 23.7500, emoji: "☕", day: 4 },
-    ],
-  },
-  {
-    id: "bali-2026",
-    destination: "Bali",
-    country: "Indonesia",
-    dates: "Jul 1 – Jul 14, 2026",
-    status: "upcoming",
-    image: baliImg,
-    description: "Two weeks of rice terraces, temple ceremonies, and surf sessions in paradise.",
-    itinerary: [
-      { day: 1, title: "Arrival in Ubud", activities: ["Arrive at Ngurah Rai Airport", "Transfer to Ubud villa", "Sunset at Tegallalang Rice Terrace"] },
-      { day: 2, title: "Ubud Culture", activities: ["Morning yoga session", "Monkey Forest sanctuary", "Traditional Balinese cooking class"] },
-      { day: 3, title: "Waterfall Day", activities: ["Tegenungan Waterfall", "Tibumana Waterfall", "Kanto Lampo Waterfall"] },
-    ],
-  },
-  {
-    id: "santorini-2025",
-    destination: "Santorini",
-    country: "Greece",
-    dates: "Sep 10 – Sep 20, 2025",
-    status: "past",
-    image: santoriniImg,
-    description: "Island-hopping through whitewashed villages with stunning caldera sunsets.",
-    itinerary: [
-      { day: 1, title: "Oia Arrival", activities: ["Ferry from Athens", "Settle into cave hotel", "Famous Oia sunset"] },
-      { day: 2, title: "Fira & Wine", activities: ["Walk from Fira to Oia", "Wine tasting at Santo Wines", "Dinner at Ammoudi Bay"] },
-    ],
-  },
-  {
-    id: "peru-2025",
-    destination: "Cusco & Machu Picchu",
-    country: "Peru",
-    dates: "May 2 – May 15, 2025",
-    status: "past",
-    image: peruImg,
-    description: "Ancient Incan trails leading to one of the world's most breathtaking wonders.",
-    itinerary: [
-      { day: 1, title: "Cusco Acclimatization", activities: ["Arrive in Cusco", "Plaza de Armas walking tour", "Coca tea and rest"] },
-      { day: 2, title: "Sacred Valley", activities: ["Pisac ruins and market", "Ollantaytambo fortress", "Traditional lunch in Urubamba"] },
-      { day: 3, title: "Inca Trail Day 1", activities: ["Start at km 82", "Hike to Wayllabamba", "Camp at 3,000m altitude"] },
     ],
   },
 ];
