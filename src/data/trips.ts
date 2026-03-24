@@ -81,7 +81,7 @@ export const trips: Trip[] = [
           "12:00 PM — National Museum of Contemporary Art",
           "2:00 PM — Coffee at Peggy Sue",
           "3:30 PM — Massage retreat - Devine Spa",
-          "8:00 PM — Dinner at THE BOTANY (reservation, views of Temple of Zeus)",
+          "8:00 PM — Dinner at THE BOTANY",
         ],
       },
       {
