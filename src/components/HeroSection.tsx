@@ -20,18 +20,9 @@ const HeroSection = () => {
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.8, ease: "easeOut" }}
         >
-          <div className="mb-4 flex items-center justify-center gap-2 text-primary-foreground/80">
-            <MapPin className="h-4 w-4" />
-            <span className="font-body text-sm uppercase tracking-[0.25em]">
-              Travel Journal
-            </span>
-          </div>
           <h1 className="font-display text-5xl font-bold leading-tight text-primary-foreground md:text-7xl lg:text-8xl">
             Trip Book
           </h1>
-          <p className="mt-4 max-w-md font-body text-lg font-light text-primary-foreground/80 md:text-xl">
-            Every journey tells a story. Here are mine.
-          </p>
         </motion.div>
       </div>
     </section>
