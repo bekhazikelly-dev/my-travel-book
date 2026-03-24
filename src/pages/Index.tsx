@@ -16,7 +16,7 @@ const Index = () => {
       />
       <footer className="border-t border-border py-10 text-center">
         <p className="font-body text-sm text-muted-foreground">
-          © 2026 Wanderlust — A Personal Travel Journal
+          © 2026 Trip Book — A Personal Travel Journal
         </p>
       </footer>
     </div>
