@@ -14,8 +14,6 @@ const Index = () => {
         subtitle="What's Next"
         trips={upcoming}
       />
-      <div className="min-h-screen bg-background">
-      <HeroSection />
       <TripSection
         title="Past Adventures"
         subtitle="What I've Done"
