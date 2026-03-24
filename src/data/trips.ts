@@ -40,7 +40,7 @@ export const trips: Trip[] = [
     destination: "Athens",
     country: "Greece",
     dates: "Mar 26 – Mar 29, 2026",
-    status: "Upcoming",
+    status: "upcoming",
     image: athensImg,
     description: "Lynn's Bachlorette.",
     homeBase: {
@@ -52,10 +52,10 @@ export const trips: Trip[] = [
         day: 1,
         title: "Sister's day 🌞",
         activities: [
-          "3:30 PM — Late lunch at Mavro Provato (modern Greek meze)",
+          "3:30 PM — Late lunch at Mavro Provato",
           "5:00 PM — Golden hour stroll through National Garden",
-          "6:00 PM — Coffee at Numismatic Café (hidden courtyard oasis)",
-          "8:30 PM — Dinner at Hill Athens Rooftop Restaurant (reservation for 2)",
+          "6:00 PM — Coffee at Numismatic Café ",
+          "8:30 PM — Dinner at Hill Athens Rooftop Restaurant",
           "11:00 PM — Drinks at Secta Bar Athens",
         ],
       },
@@ -65,7 +65,7 @@ export const trips: Trip[] = [
         activities: [
           "9:30 AM — Breakfast at KUDU Coffee Shop",
           "11:00 AM — Explore the Acropolis Museum",
-          "1:00 PM — Legendary kebab lunch at O Thanasis",
+          "1:00 PM — Lunch at O Thanasis",
           "3:00 PM — Café break at Melina Mercouri Café",
           "9:00 PM — Dinner at Oroscopo Restaurant",
           "11:00 PM — Bar crawl: Hitchcocktales → Hippy3 → Secta Bar → FRED",
@@ -77,9 +77,9 @@ export const trips: Trip[] = [
         activities: [
           "10:00 AM — Brunch at Ohh Boy (banoffee pie!)",
           "12:00 PM — National Museum of Contemporary Art",
-          "2:00 PM — coffee at Peggy Sue",
+          "2:00 PM — Coffee at Peggy Sue",
           "3:30 PM — Massage retreat - Devine Spa",
-          "8:00 PM — Fancy dinner at THE BOTANY (reservation, views of Temple of Zeus)",
+          "8:00 PM — Dinner at THE BOTANY (reservation, views of Temple of Zeus)",
         ],
       },
       {
