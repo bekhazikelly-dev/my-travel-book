@@ -1,7 +1,4 @@
 import athensImg from "@/assets/athens.jpg";
-import santoriniImg from "@/assets/santorini.jpg";
-import peruImg from "@/assets/peru.jpg";
-import baliImg from "@/assets/bali.jpg";
 import mallorcaImg from "@/assets/mallorca.jpg";
 import lebanonImg from "@/assets/lebanon.jpg";
 
