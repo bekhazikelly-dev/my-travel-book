@@ -9,6 +9,7 @@ export interface LocationPin {
   lng: number;
   emoji: string;
   day: number;
+  url?: string;
 }
 
 export interface ItineraryDay {
@@ -27,6 +28,10 @@ export interface Trip {
   description: string;
   itinerary: ItineraryDay[];
   locations?: LocationPin[];
+  homeBase?: {
+    label: string;
+    url: string;
+  };
 }
 
 export const trips: Trip[] = [
@@ -38,36 +43,44 @@ export const trips: Trip[] = [
     status: "upcoming",
     image: athensImg,
     description: "A girls' weekend of rooftop dining, Acropolis exploring, beach vibes, and spa retreats in the heart of Athens.",
+    homeBase: {
+      label: "House",
+      url: "https://www.google.com/maps/place/Iofontos+2,+Athina+116+34,+Greece/@37.9734859,23.7400737,15z",
+    },
     itinerary: [
       {
         day: 1,
         title: "Arrival & Rooftop Magic 🌆",
         activities: [
-          "3:00 PM — Late lunch at Mavro Provato (modern Greek meze)",
-          "5:00 PM — Golden hour stroll through National Garden & Syntagma Square",
-          "6:30 PM — Coffee at the Numismatic Museum Café (hidden courtyard oasis)",
-          "8:30 PM — Dinner at Hill Athens Rooftop Restaurant (Acropolis views)",
+          "3:30 PM — Late lunch at Mavro Provato (modern Greek meze)",
+          "5:00 PM — Golden hour stroll through National Garden",
+          "6:00 PM — Coffee at Numismatic Café (hidden courtyard oasis)",
+          "8:30 PM — Dinner at Hill Athens Rooftop Restaurant (reservation for 2)",
+          "11:00 PM — Drinks at Secta Bar Athens",
         ],
       },
       {
         day: 2,
-        title: "Culture, Breads & Beach 🏖️",
+        title: "Culture, Kebabs & Cocktails 🏛️",
         activities: [
-          "9:30 AM — Artisanal pastries at KORA Kolonaki (sea salt croissants!)",
-          "11:00 AM — Explore the Acropolis & Parthenon",
+          "9:30 AM — Breakfast at KUDU Coffee Shop",
+          "11:00 AM — Explore the Acropolis Museum",
           "1:00 PM — Legendary kebab lunch at O Thanasis",
-          "2:30 PM — Taxi to Vouliagmeni Coast (sunbeds & crystal clear water)",
-          "9:00 PM — Pangrati bar crawl: Chelsea Hotel → ZIGGY Cocktail Bar",
+          "3:00 PM — Café break at Melina Mercouri Café",
+          "9:00 PM — Dinner at Oroscopo Restaurant",
+          "11:00 PM — Bar crawl: Hitchcocktales → Hippy3 → Secta Bar",
         ],
       },
       {
         day: 3,
-        title: "Rainy Day Glow-Up 🕯️",
+        title: "Art, Food & Spa Day 🕯️",
         activities: [
-          "10:30 AM — Aesthetic brunch at Ohh Boy (banoffee pie!)",
-          "1:00 PM — Spa retreat at Athens Divine Spa & Massage",
-          "3:30 PM — Acropolis Museum (glass floors over ancient ruins)",
-          "8:00 PM — Fancy dinner at THE BOTANY (views of Temple of Zeus)",
+          "10:30 AM — Brunch at Ohh Boy (banoffee pie!)",
+          "1:00 PM — National Museum of Contemporary Art",
+          "3:00 PM — Seaside vibes at FRED",
+          "4:30 PM — Cocktails at Peggy Sue",
+          "5:30 PM — Massage retreat",
+          "8:00 PM — Fancy dinner at THE BOTANY (reservation, views of Temple of Zeus)",
         ],
       },
       {
@@ -80,19 +93,23 @@ export const trips: Trip[] = [
       },
     ],
     locations: [
-      { name: "Mavro Provato", lat: 37.9685, lng: 23.7490, emoji: "🍽️", day: 1 },
-      { name: "Syntagma Square", lat: 37.9755, lng: 23.7348, emoji: "🌳", day: 1 },
-      { name: "Numismatic Museum Café", lat: 37.9783, lng: 23.7327, emoji: "☕", day: 1 },
-      { name: "Hill Athens Rooftop", lat: 37.9747, lng: 23.7352, emoji: "🌆", day: 1 },
-      { name: "KORA Kolonaki", lat: 37.9793, lng: 23.7420, emoji: "🍞", day: 2 },
-      { name: "Acropolis", lat: 37.9715, lng: 23.7257, emoji: "🏛️", day: 2 },
-      { name: "O Thanasis", lat: 37.9770, lng: 23.7265, emoji: "🥙", day: 2 },
-      { name: "Vouliagmeni Coast", lat: 37.8100, lng: 23.7830, emoji: "🏖️", day: 2 },
-      { name: "ZIGGY Cocktail Bar", lat: 37.9680, lng: 23.7510, emoji: "🍸", day: 2 },
-      { name: "Ohh Boy", lat: 37.9760, lng: 23.7400, emoji: "🥑", day: 3 },
-      { name: "Athens Divine Spa", lat: 37.9780, lng: 23.7380, emoji: "🕯️", day: 3 },
-      { name: "Acropolis Museum", lat: 37.9686, lng: 23.7288, emoji: "🏺", day: 3 },
-      { name: "THE BOTANY", lat: 37.9695, lng: 23.7310, emoji: "🍷", day: 3 },
+      { name: "Mavro Provato", lat: 37.9685, lng: 23.7490, emoji: "🍽️", day: 1, url: "https://www.google.com/maps?daddr=Arrianou+33,+Athina+116+35,+Greece" },
+      { name: "National Garden", lat: 37.9725878, lng: 23.737433, emoji: "🌳", day: 1, url: "https://www.google.com/maps/place/Athens+National+Garden/@37.9725878,23.737433" },
+      { name: "Numismatic Café", lat: 37.9780601, lng: 23.7355938, emoji: "☕", day: 1, url: "https://www.google.com/maps/place/Caf%C3%A9+%CF%83%CF%84%CE%BF%CE%BD+%CE%BA%CE%AE%CF%80%CE%BF+%CF%84%CE%BF%CF%85+%CE%9D%CE%BF%CE%BC%CE%B9%CF%83%CE%BC%CE%B1%CF%84%CE%B9%CE%BA%CE%BF%CF%8D+%CE%9C%CE%BF%CF%85%CF%83%CE%B5%CE%AF%CE%BF%CF%85/@37.9780601,23.7355938" },
+      { name: "Hill Athens Rooftop", lat: 37.9741935, lng: 23.7199049, emoji: "🌆", day: 1, url: "https://www.google.com/maps/place/Hill+Athens+Rooftop+Restaurant/@37.9741935,23.7199049" },
+      { name: "Secta Bar", lat: 37.9734694, lng: 23.750352, emoji: "🍸", day: 1, url: "https://www.google.com/maps/place/Secta+Bar+Athens/@37.9734694,23.750352" },
+      { name: "KUDU Coffee", lat: 37.9674743, lng: 23.7471422, emoji: "☕", day: 2, url: "https://www.google.com/maps/place/KUDU+Coffee+Shop+Pagrati/@37.9674743,23.7471422" },
+      { name: "Acropolis Museum", lat: 37.9684499, lng: 23.7285227, emoji: "🏺", day: 2, url: "https://www.google.com/maps/place/Acropolis+Museum/@37.9684499,23.7285227" },
+      { name: "O Thanasis", lat: 37.9762894, lng: 23.7264863, emoji: "🥙", day: 2, url: "https://www.google.com/maps/place/Thanasis/@37.9762894,23.7264863" },
+      { name: "Melina Mercouri", lat: 37.9733376, lng: 23.7285992, emoji: "☕", day: 2, url: "https://www.google.com/maps/place/Melina+Mercouri+Caf%C3%A9/@37.9733376,23.7285992" },
+      { name: "Oroscopo", lat: 37.9734552, lng: 23.7505042, emoji: "🍽️", day: 2, url: "https://www.google.com/maps/place/Oroscopo+restaurant/@37.9734552,23.7505042" },
+      { name: "Hitchcocktales", lat: 37.9682552, lng: 23.7298978, emoji: "🍸", day: 2, url: "https://www.google.com/maps/place/Hitchcocktales+Athens+Bar+Restaurant/@37.9682552,23.7298978" },
+      { name: "Hippy3", lat: 37.9699505, lng: 23.747711, emoji: "🍸", day: 2, url: "https://www.google.com/maps/place/Hippy3/@37.9699505,23.747711" },
+      { name: "Ohh Boy", lat: 37.9724154, lng: 23.7455671, emoji: "🥑", day: 3, url: "https://www.google.com/maps/place/Ohh+Boy/@37.9724154,23.7455671" },
+      { name: "National Museum of Contemporary Art", lat: 37.9630008, lng: 23.7253443, emoji: "🎨", day: 3, url: "https://www.google.com/maps/place/National+Museum+of+Contemporary+Art/@37.9630008,23.7253443" },
+      { name: "FRED", lat: 37.9456174, lng: 23.7106656, emoji: "🍹", day: 3, url: "https://www.google.com/maps/place/Fred/@37.9456174,23.7106656" },
+      { name: "Peggy Sue", lat: 37.9539409, lng: 23.7151041, emoji: "🍸", day: 3, url: "https://www.google.com/maps/place/Peggy+Sue/@37.9539409,23.7151041" },
+      { name: "THE BOTANY", lat: 37.9693908, lng: 23.7313817, emoji: "🍷", day: 3, url: "https://www.google.com/maps/place/The+Botany+Roof+Garden+at+Acropolis/@37.9693908,23.7313817" },
       { name: "KROSS Coffee Roasters", lat: 37.9670, lng: 23.7500, emoji: "☕", day: 4 },
     ],
   },
