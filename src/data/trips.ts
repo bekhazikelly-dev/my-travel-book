@@ -17,6 +17,12 @@ export interface ItineraryDay {
   activities: string[];
 }
 
+export interface PackingItem {
+  id: string;
+  name: string;
+  category: string;
+}
+
 export interface Trip {
   id: string;
   destination: string;
@@ -31,6 +37,7 @@ export interface Trip {
     label: string;
     url: string;
   };
+  packingList?: PackingItem[];
 }
 
 export const trips: Trip[] = [
@@ -49,7 +56,7 @@ export const trips: Trip[] = [
     itinerary: [
       {
         day: 1,
-        title: "Sister's day 🌞",
+        title: "Sisters day 🌞",
         activities: [
           "3:30 PM — Late lunch at Mavro Provato",
           "5:00 PM — Golden hour stroll through National Garden",
@@ -110,7 +117,87 @@ export const trips: Trip[] = [
       { name: "Devine Spa", lat: 37.9788272, lng: 23.7294645, emoji: "💆", day: 3, url: "https://www.google.com/maps?cid=6338285055770001958&g_mp=Cidnb29nbGUubWFwcy5wbGFjZXMudjEuUGxhY2VzLlNlYXJjaFRleHQ" },
       { name: "THE BOTANY", lat: 37.9693908, lng: 23.7313817, emoji: "🍷", day: 3, url: "https://www.google.com/maps/place/The+Botany+Roof+Garden+at+Acropolis/@37.9693908,23.7313817,16z/data=!3m1!4b1!4m6!3m5!1s0x14a1bd2a7cc5e78d:0xde900b307f25bb5d!8m2!3d37.9693908!4d23.7313817!16s%2Fg%2F11wr2p0rh1?entry=ttu&g_ep=EgoyMDI2MDMzOC4xIKXMDSoASAFQAw%3D%3D" },
       { name: "KROSS Coffee Roasters", lat: 37.9670, lng: 23.7500, emoji: "☕", day: 4 },
-      { name: "KROSS Coffee Roasters M", lat: 37.9670, lng: 23.7500, emoji: "☕", day: 4 },
+    ],
+    packingList: [
+      // Chaussures
+      { id: "1", name: "Basket", category: "Chaussures" },
+      { id: "3", name: "Ballerine", category: "Chaussures" },
+      { id: "4", name: "Talons (ouvert/fermé)", category: "Chaussures" },
+      { id: "5", name: "Sandales", category: "Chaussures" },
+      { id: "6", name: "Flip flop", category: "Chaussures" },
+      { id: "7", name: "Boots", category: "Chaussures" },
+
+      // Haut
+      { id: "9", name: "T-shirt", category: "Haut" },
+      { id: "10", name: "Bretelles", category: "Haut" },
+      { id: "11", name: "Crops", category: "Haut" },
+      { id: "13", name: "Chemise", category: "Haut" },
+      { id: "15", name: "Hoodies", category: "Haut" },
+      { id: "16", name: "Pull", category: "Haut" },
+
+      // Robes
+      { id: "20", name: "Robe de soirée", category: "Robes" },
+      { id: "21", name: "Robe courte d'été", category: "Robes" },
+      { id: "22", name: "Robe courte d'hiver", category: "Robes" },
+      { id: "23", name: "Robe longue d'été", category: "Robes" },
+      { id: "24", name: "Robe longue d'hiver", category: "Robes" },
+
+      // Bas
+      { id: "25", name: "Jeans", category: "Bas" },
+      { id: "27", name: "Pantalon", category: "Bas" },
+      { id: "29", name: "Short", category: "Bas" },
+      { id: "32", name: "Jupe", category: "Bas" },
+      { id: "33", name: "Legging", category: "Bas" },
+
+      // Sac
+      { id: "35", name: "Pochette", category: "Sac" },
+      { id: "36", name: "Porte-monnaie (grand/petit)", category: "Sac" },
+      { id: "37", name: "Sac croisé", category: "Sac" },
+      { id: "38", name: "Sac sur épaule", category: "Sac" },
+
+      // Bijoux
+      { id: "39", name: "Boucle d'oreille (longue/petite)", category: "Bijoux" },
+      { id: "40", name: "Bracelet", category: "Bijoux" },
+      { id: "41", name: "Montre", category: "Bijoux" },
+      { id: "42", name: "Bague", category: "Bijoux" },
+
+      // Sous-vêtements
+      { id: "43", name: "Culotte", category: "Sous-vêtements" },
+      { id: "44", name: "Soutien", category: "Sous-vêtements" },
+      { id: "48", name: "Body", category: "Sous-vêtements" },
+      { id: "50", name: "Pyjama (hiver et été)", category: "Sous-vêtements" },
+
+      // Trousse de toilette
+      { id: "51", name: "Crème", category: "Trousse de toilette" },
+      { id: "52", name: "SPF 50", category: "Trousse de toilette" },
+      { id: "54", name: "Savon de visage", category: "Trousse de toilette" },
+      { id: "56", name: "Brosse à cheveux", category: "Trousse de toilette" },
+      { id: "57", name: "Brosse à dents", category: "Trousse de toilette" },
+      { id: "58", name: "Dentifrice", category: "Trousse de toilette" },
+      { id: "59", name: "Rasoir", category: "Trousse de toilette" },
+      { id: "60", name: "Pince à épiler", category: "Trousse de toilette" },
+      { id: "61", name: "Maquillage", category: "Trousse de toilette" },
+
+      // Accessoires
+      { id: "62", name: "Lunette de soleil", category: "Accessoires" },
+      { id: "63", name: "Chapeau", category: "Accessoires" },
+      { id: "64", name: "Écharpe", category: "Accessoires" },
+      { id: "65", name: "Bonnet", category: "Accessoires" },
+      { id: "66", name: "Collant", category: "Accessoires" },
+      { id: "67", name: "Gant", category: "Accessoires" },
+
+      // Extra
+      { id: "68", name: "Chargeur ordinateur", category: "Extra" },
+      { id: "69", name: "Chargeur téléphone", category: "Extra" },
+      { id: "70", name: "Écouteur", category: "Extra" },
+      { id: "74", name: "Passport", category: "Extra" },
+      { id: "75", name: "Livre", category: "Extra" },
+      { id: "76", name: "Power bank", category: "Extra" },
+      { id: "77", name: "Notebook", category: "Extra" },
+      { id: "78", name: "Planner", category: "Extra" },
+      { id: "79", name: "Masque", category: "Extra" },
+      { id: "80", name: "Hand gel", category: "Extra" },
+      { id: "81", name: "Chewing gum", category: "Extra" },
     ],
   },
   {
@@ -241,6 +328,109 @@ export const trips: Trip[] = [
       { name: "Muddy's Wood Fired Grill", lat: 39.8420, lng: 3.1280, emoji: "🔥", day: 9, url: "https://www.google.com/maps/place/Muddy's+Wood+Fired+Grill,+Alcudia" },
       // Day 10
       { name: "Steak House Carabela", lat: 39.8490, lng: 3.1230, emoji: "🥩", day: 10, url: "https://www.google.com/maps/place/Steak+House+Carabela,+Alcudia" },
+    ],
+    packingList: [
+      // Chaussures
+      { id: "1", name: "Basket (Adidas)", category: "Chaussures" },
+      { id: "2", name: "Chaussure de sport", category: "Chaussures" },
+      { id: "3", name: "Ballerine", category: "Chaussures" },
+      { id: "4", name: "Talons (ouvert/fermé)", category: "Chaussures" },
+      { id: "5", name: "Sandales", category: "Chaussures" },
+      { id: "6", name: "Flip flop", category: "Chaussures" },
+      { id: "7", name: "Boots", category: "Chaussures" },
+      { id: "8", name: "Santiague", category: "Chaussures" },
+
+      // Haut
+      { id: "9", name: "T-shirt", category: "Haut" },
+      { id: "10", name: "Bretelles", category: "Haut" },
+      { id: "11", name: "Crops", category: "Haut" },
+      { id: "12", name: "Manche longue", category: "Haut" },
+      { id: "13", name: "Chemise", category: "Haut" },
+      { id: "14", name: "Blouses", category: "Haut" },
+      { id: "15", name: "Hoodies", category: "Haut" },
+      { id: "16", name: "Pull", category: "Haut" },
+      { id: "17", name: "Pull col roulé", category: "Haut" },
+      { id: "18", name: "Veste ouverte / à bouton", category: "Haut" },
+      { id: "19", name: "T-shirt de sport", category: "Haut" },
+
+      // Robes
+      { id: "20", name: "Robe de soirée", category: "Robes" },
+      { id: "21", name: "Robe courte d'été", category: "Robes" },
+      { id: "22", name: "Robe courte d'hiver", category: "Robes" },
+      { id: "23", name: "Robe longue d'été", category: "Robes" },
+      { id: "24", name: "Robe longue d'hiver", category: "Robes" },
+
+      // Bas
+      { id: "25", name: "Jeans", category: "Bas" },
+      { id: "26", name: "Pantalon de travail", category: "Bas" },
+      { id: "27", name: "Pantalon large", category: "Bas" },
+      { id: "28", name: "Jeans noir", category: "Bas" },
+      { id: "29", name: "Short", category: "Bas" },
+      { id: "30", name: "Jupe en cuir", category: "Bas" },
+      { id: "31", name: "Jupe short noir en daim", category: "Bas" },
+      { id: "32", name: "Jupe longue", category: "Bas" },
+      { id: "33", name: "Legging", category: "Bas" },
+
+      // Sac
+      { id: "34", name: "Cartable", category: "Sac" },
+      { id: "35", name: "Pochette", category: "Sac" },
+      { id: "36", name: "Porte-monnaie (grand/petit)", category: "Sac" },
+      { id: "37", name: "Sac croisé", category: "Sac" },
+      { id: "38", name: "Sac sur épaule", category: "Sac" },
+
+      // Bijoux
+      { id: "39", name: "Boucle d'oreille (longue/petite)", category: "Bijoux" },
+      { id: "40", name: "Bracelet", category: "Bijoux" },
+      { id: "41", name: "Montre", category: "Bijoux" },
+      { id: "42", name: "Bague", category: "Bijoux" },
+
+      // Sous-vêtements
+      { id: "43", name: "Culotte de règle", category: "Sous-vêtements" },
+      { id: "44", name: "Soutien", category: "Sous-vêtements" },
+      { id: "45", name: "Brassière", category: "Sous-vêtements" },
+      { id: "46", name: "Soutien de sport", category: "Sous-vêtements" },
+      { id: "47", name: "Short de dessous de robe", category: "Sous-vêtements" },
+      { id: "48", name: "Body", category: "Sous-vêtements" },
+      { id: "49", name: "String", category: "Sous-vêtements" },
+      { id: "50", name: "Pyjama (hiver et été)", category: "Sous-vêtements" },
+
+      // Trousse de toilette
+      { id: "51", name: "Crème de jour", category: "Trousse de toilette" },
+      { id: "52", name: "SPF 50", category: "Trousse de toilette" },
+      { id: "53", name: "Crème pour les mains", category: "Trousse de toilette" },
+      { id: "54", name: "Savon de visage", category: "Trousse de toilette" },
+      { id: "55", name: "Produit intime", category: "Trousse de toilette" },
+      { id: "56", name: "Brosse à cheveux", category: "Trousse de toilette" },
+      { id: "57", name: "Brosse à dents", category: "Trousse de toilette" },
+      { id: "58", name: "Dentifrice", category: "Trousse de toilette" },
+      { id: "59", name: "Rasoir", category: "Trousse de toilette" },
+      { id: "60", name: "Pince à épiler", category: "Trousse de toilette" },
+      { id: "61", name: "Maquillage (mascara, rouge à lèvres, fard à paupière...)", category: "Trousse de toilette" },
+
+      // Accessoires
+      { id: "62", name: "Lunette de soleil", category: "Accessoires" },
+      { id: "63", name: "Chapeau", category: "Accessoires" },
+      { id: "64", name: "Écharpe", category: "Accessoires" },
+      { id: "65", name: "Bonnet", category: "Accessoires" },
+      { id: "66", name: "Collant", category: "Accessoires" },
+      { id: "67", name: "Gant", category: "Accessoires" },
+
+      // Extra
+      { id: "68", name: "Chargeur ordinateur", category: "Extra" },
+      { id: "69", name: "Chargeur téléphone", category: "Extra" },
+      { id: "70", name: "Écouteur", category: "Extra" },
+      { id: "71", name: "Séchoir", category: "Extra" },
+      { id: "72", name: "Fer à lisser", category: "Extra" },
+      { id: "73", name: "Fer à boucler", category: "Extra" },
+      { id: "74", name: "Passport", category: "Extra" },
+      { id: "75", name: "Livre", category: "Extra" },
+      { id: "76", name: "Power bank", category: "Extra" },
+      { id: "77", name: "Notebook", category: "Extra" },
+      { id: "78", name: "Planner", category: "Extra" },
+      { id: "79", name: "Masque", category: "Extra" },
+      { id: "80", name: "Hand gel", category: "Extra" },
+      { id: "81", name: "Chewing gum", category: "Extra" },
+      { id: "82", name: "Matériel de peinture", category: "Extra" },
     ],
   },
   {
@@ -447,6 +637,109 @@ export const trips: Trip[] = [
       { name: "Armenia Street", lat: 33.8867, lng: 35.4923, emoji: "🎨", day: 12, url: "https://www.google.com/maps/place/Bartartine+-+St.+Nicolas/@33.8919286,35.47947,13z/data=!4m10!1m2!2m1!1sBartartine+(Gemmayzeh)+!3m6!1s0x151f16fc7829f5a1:0xa7e99c7adf21f527!8m2!3d33.8919286!4d35.5144889!15sChZCYXJ0YXJ0aW5lIChHZW1tYXl6ZWgpIgOIAQFaFiIUYmFydGFydGluZSBnZW1tYXl6ZWiSAQpyZXN0YXVyYW504AEA!16s%2Fg%2F11gcx_vl0_?entry=ttu&g_ep=EgoyMDI2MDMzOC4xIKXMDSoASAFQAw%3D%3D" },
       { name: "Armenia Street", lat: 33.8867, lng: 35.4923, emoji: "🎨", day: 12, url: "https://www.google.com/maps/place/Bartartine+-+St.+Nicolas/@33.8919286,35.47947,13z/data=!4m10!1m2!2m1!1sBartartine+(Gemmayzeh)+!3m6!1s0x151f16fc7829f5a1:0xa7e99c7adf21f527!8m2!3d33.8919286!4d35.5144889!15sChZCYXJ0YXJ0aW5lIChHZW1tYXl6ZWgpIgOIAQFaFiIUYmFydGFydGluZSBnZW1tYXl6ZWiSAQpyZXN0YXVyYW504AEA!16s%2Fg%2F11gcx_vl0_?entry=ttu&g_ep=EgoyMDI2MDMzOC4xIKXMDSoASAFQAw%3D%3D" },
       { name: "Le Gray Beirut", lat: 33.8972396, lng: 35.5067343, emoji: "🏨", day: 13, url: "https://www.google.com/maps/place/Le+Gray,+Beirut/@33.8880527,35.4999267,15.21z/data=!4m14!1m2!2m1!1sLe+Gray+(Cherry+on+the+Rooftop)!3m10!1s0x151f1797923c6ebb:0xbf387dfe537c461!5m3!1s2026-04-24!4m1!1i2!8m2!3d33.8972396!4d35.5067343!15sCh9MZSBHcmF5IChDaGVycnkgb24gdGhlIFJvb2Z0b3ApWh8iHWxlIGdyYXkgY2hlcnJ5IG9uIHRoZSByb29mdG9wkgEFaG90ZWyaAURDaTlEUVVsUlFVTnZaRU5vZEhsalJqbHZUMjVhTmxWV09YaGhTRlV3VTBZNU5tTXdSbXhWTVdoRFRtNVNabEZWUlJBQuABAPoBBQjLARAn!16s%2Fg%2F1tglcs7s?entry=ttu&g_ep=EgoyMDI2MDMzOC4xIKXMDSoASAFQAw%3D%3D" },
+    ],
+    packingList: [
+      // Chaussures
+      { id: "1", name: "Basket (Adidas)", category: "Chaussures" },
+      { id: "2", name: "Chaussure de sport", category: "Chaussures" },
+      { id: "3", name: "Ballerine", category: "Chaussures" },
+      { id: "4", name: "Talons (ouvert/fermé)", category: "Chaussures" },
+      { id: "5", name: "Sandales", category: "Chaussures" },
+      { id: "6", name: "Flip flop", category: "Chaussures" },
+      { id: "7", name: "Boots", category: "Chaussures" },
+      { id: "8", name: "Santiague", category: "Chaussures" },
+
+      // Haut
+      { id: "9", name: "T-shirt", category: "Haut" },
+      { id: "10", name: "Bretelles", category: "Haut" },
+      { id: "11", name: "Crops", category: "Haut" },
+      { id: "12", name: "Manche longue", category: "Haut" },
+      { id: "13", name: "Chemise", category: "Haut" },
+      { id: "14", name: "Blouses", category: "Haut" },
+      { id: "15", name: "Hoodies", category: "Haut" },
+      { id: "16", name: "Pull", category: "Haut" },
+      { id: "17", name: "Pull col roulé", category: "Haut" },
+      { id: "18", name: "Veste ouverte / à bouton", category: "Haut" },
+      { id: "19", name: "T-shirt de sport", category: "Haut" },
+
+      // Robes
+      { id: "20", name: "Robe de soirée", category: "Robes" },
+      { id: "21", name: "Robe courte d'été", category: "Robes" },
+      { id: "22", name: "Robe courte d'hiver", category: "Robes" },
+      { id: "23", name: "Robe longue d'été", category: "Robes" },
+      { id: "24", name: "Robe longue d'hiver", category: "Robes" },
+
+      // Bas
+      { id: "25", name: "Jeans", category: "Bas" },
+      { id: "26", name: "Pantalon de travail", category: "Bas" },
+      { id: "27", name: "Pantalon large", category: "Bas" },
+      { id: "28", name: "Jeans noir", category: "Bas" },
+      { id: "29", name: "Short", category: "Bas" },
+      { id: "30", name: "Jupe en cuir", category: "Bas" },
+      { id: "31", name: "Jupe short noir en daim", category: "Bas" },
+      { id: "32", name: "Jupe longue", category: "Bas" },
+      { id: "33", name: "Legging", category: "Bas" },
+
+      // Sac
+      { id: "34", name: "Cartable", category: "Sac" },
+      { id: "35", name: "Pochette", category: "Sac" },
+      { id: "36", name: "Porte-monnaie (grand/petit)", category: "Sac" },
+      { id: "37", name: "Sac croisé", category: "Sac" },
+      { id: "38", name: "Sac sur épaule", category: "Sac" },
+
+      // Bijoux
+      { id: "39", name: "Boucle d'oreille (longue/petite)", category: "Bijoux" },
+      { id: "40", name: "Bracelet", category: "Bijoux" },
+      { id: "41", name: "Montre", category: "Bijoux" },
+      { id: "42", name: "Bague", category: "Bijoux" },
+
+      // Sous-vêtements
+      { id: "43", name: "Culotte de règle", category: "Sous-vêtements" },
+      { id: "44", name: "Soutien", category: "Sous-vêtements" },
+      { id: "45", name: "Brassière", category: "Sous-vêtements" },
+      { id: "46", name: "Soutien de sport", category: "Sous-vêtements" },
+      { id: "47", name: "Short de dessous de robe", category: "Sous-vêtements" },
+      { id: "48", name: "Body", category: "Sous-vêtements" },
+      { id: "49", name: "String", category: "Sous-vêtements" },
+      { id: "50", name: "Pyjama (hiver et été)", category: "Sous-vêtements" },
+
+      // Trousse de toilette
+      { id: "51", name: "Crème de jour", category: "Trousse de toilette" },
+      { id: "52", name: "SPF 50", category: "Trousse de toilette" },
+      { id: "53", name: "Crème pour les mains", category: "Trousse de toilette" },
+      { id: "54", name: "Savon de visage", category: "Trousse de toilette" },
+      { id: "55", name: "Produit intime", category: "Trousse de toilette" },
+      { id: "56", name: "Brosse à cheveux", category: "Trousse de toilette" },
+      { id: "57", name: "Brosse à dents", category: "Trousse de toilette" },
+      { id: "58", name: "Dentifrice", category: "Trousse de toilette" },
+      { id: "59", name: "Rasoir", category: "Trousse de toilette" },
+      { id: "60", name: "Pince à épiler", category: "Trousse de toilette" },
+      { id: "61", name: "Maquillage (mascara, rouge à lèvres, fard à paupière...)", category: "Trousse de toilette" },
+
+      // Accessoires
+      { id: "62", name: "Lunette de soleil", category: "Accessoires" },
+      { id: "63", name: "Chapeau", category: "Accessoires" },
+      { id: "64", name: "Écharpe", category: "Accessoires" },
+      { id: "65", name: "Bonnet", category: "Accessoires" },
+      { id: "66", name: "Collant", category: "Accessoires" },
+      { id: "67", name: "Gant", category: "Accessoires" },
+
+      // Extra
+      { id: "68", name: "Chargeur ordinateur", category: "Extra" },
+      { id: "69", name: "Chargeur téléphone", category: "Extra" },
+      { id: "70", name: "Écouteur", category: "Extra" },
+      { id: "71", name: "Séchoir", category: "Extra" },
+      { id: "72", name: "Fer à lisser", category: "Extra" },
+      { id: "73", name: "Fer à boucler", category: "Extra" },
+      { id: "74", name: "Passport", category: "Extra" },
+      { id: "75", name: "Livre", category: "Extra" },
+      { id: "76", name: "Power bank", category: "Extra" },
+      { id: "77", name: "Notebook", category: "Extra" },
+      { id: "78", name: "Planner", category: "Extra" },
+      { id: "79", name: "Masque", category: "Extra" },
+      { id: "80", name: "Hand gel", category: "Extra" },
+      { id: "81", name: "Chewing gum", category: "Extra" },
+      { id: "82", name: "Matériel de peinture", category: "Extra" },
     ],
   },
 ];

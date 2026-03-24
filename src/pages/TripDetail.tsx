@@ -4,6 +4,7 @@ import { trips } from "@/data/trips";
 import TripMap from "@/components/TripMap";
 import TripItinerary from "@/components/TripItinerary";
 import WeatherWidget from "@/components/WeatherWidget";
+import PackingChecklist from "@/components/PackingChecklist";
 
 const TripDetail = () => {
   const { id } = useParams<{ id: string }>();
@@ -63,16 +64,31 @@ const TripDetail = () => {
         </div>
       </header>
 
-      {/* Main: Map + Itinerary */}
+      {/* Main: Packing Checklist + Itinerary */}
       <div className="mx-auto max-w-7xl px-4 py-6 sm:px-6">
-        <div className="grid gap-6 lg:grid-cols-2">
-          <div className="h-[calc(100vh-160px)] overflow-y-auto rounded-xl border border-border bg-card p-6 shadow-sm">
+        <div className="grid gap-6 lg:grid-cols-3">
+          {/* Packing Checklist - Desktop Left */}
+          {trip.packingList && trip.packingList.length > 0 && (
+            <div className="hidden lg:block">
+              <PackingChecklist items={trip.packingList} />
+            </div>
+          )}
+
+          {/* Itinerary */}
+          <div className="lg:col-span-2 h-[calc(100vh-160px)] overflow-y-auto rounded-xl border border-border bg-card p-6 shadow-sm">
             <div className="sm:hidden mb-6">
               <WeatherWidget city={trip.destination} />
             </div>
             <TripItinerary trip={trip} />
           </div>
         </div>
+
+        {/* Packing Checklist - Mobile Bottom */}
+        {trip.packingList && trip.packingList.length > 0 && (
+          <div className="mt-6 lg:hidden">
+            <PackingChecklist items={trip.packingList} />
+          </div>
+        )}
       </div>
     </div>
   );
