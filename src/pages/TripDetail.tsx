@@ -62,9 +62,6 @@ const TripDetail = () => {
       {/* Main: Map + Itinerary */}
       <div className="mx-auto max-w-7xl px-4 py-6 sm:px-6">
         <div className="grid gap-6 lg:grid-cols-2">
-          <div className="h-[calc(100vh-160px)] overflow-hidden rounded-xl border border-border shadow-sm">
-            <TripMap locations={trip.locations || []} destination={trip.destination} />
-          </div>
           <div className="h-[calc(100vh-160px)] overflow-y-auto rounded-xl border border-border bg-card p-6 shadow-sm">
             <TripItinerary trip={trip} />
           </div>
