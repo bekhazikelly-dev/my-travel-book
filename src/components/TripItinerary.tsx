@@ -12,10 +12,6 @@ const findLocation = (activity: string, locations: LocationPin[], day: number): 
   );
 };
 
-const getGoogleMapsUrl = (loc: LocationPin): string => {
-  return `https://www.google.com/maps/search/?api=1&query=${loc.lat},${loc.lng}&query_place_id=${encodeURIComponent(loc.name + " Athens")}`;
-};
-
 const TripItinerary = ({ trip }: TripItineraryProps) => {
   const locations = trip.locations || [];
 
@@ -48,11 +44,11 @@ const TripItinerary = ({ trip }: TripItineraryProps) => {
             <ul className="mt-2 space-y-2">
               {day.activities.map((activity, j) => {
                 const loc = findLocation(activity, locations, day.day);
-                if (loc) {
+                if (loc?.url) {
                   return (
                     <li key={j}>
                       <a
-                        href={getGoogleMapsUrl(loc)}
+                        href={loc.url}
                         target="_blank"
                         rel="noopener noreferrer"
                         className="group/link flex items-start gap-1.5 font-body text-sm leading-relaxed text-muted-foreground transition-colors hover:text-primary"

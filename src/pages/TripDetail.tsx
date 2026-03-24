@@ -1,5 +1,5 @@
 import { useParams, Link } from "react-router-dom";
-import { ArrowLeft, Cloud, Sun, CloudRain, Thermometer } from "lucide-react";
+import { ArrowLeft, Home } from "lucide-react";
 import { trips } from "@/data/trips";
 import TripMap from "@/components/TripMap";
 import TripItinerary from "@/components/TripItinerary";
@@ -27,7 +27,7 @@ const TripDetail = () => {
       {/* Header */}
       <header className="relative border-b border-border bg-card">
         <div className="mx-auto flex max-w-7xl items-center justify-between px-4 py-4 sm:px-6">
-          <div className="flex items-center gap-4">
+          <div className="flex items-center gap-3">
             <Link
               to="/"
               className="flex items-center gap-1.5 rounded-lg bg-accent px-3 py-2 font-body text-sm text-accent-foreground transition-colors hover:bg-primary hover:text-primary-foreground"
@@ -35,6 +35,17 @@ const TripDetail = () => {
               <ArrowLeft className="h-4 w-4" />
               Back
             </Link>
+            {trip.homeBase && (
+              <a
+                href={trip.homeBase.url}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="flex items-center gap-1.5 rounded-lg bg-primary px-3 py-2 font-body text-sm text-primary-foreground transition-colors hover:bg-primary/80"
+              >
+                <Home className="h-4 w-4" />
+                {trip.homeBase.label}
+              </a>
+            )}
             <div>
               <h1 className="font-display text-2xl font-bold text-foreground sm:text-3xl">
                 {trip.destination}
@@ -51,12 +62,9 @@ const TripDetail = () => {
       {/* Main: Map + Itinerary */}
       <div className="mx-auto max-w-7xl px-4 py-6 sm:px-6">
         <div className="grid gap-6 lg:grid-cols-2">
-          {/* Left: Map */}
           <div className="h-[calc(100vh-160px)] overflow-hidden rounded-xl border border-border shadow-sm">
             <TripMap locations={trip.locations || []} destination={trip.destination} />
           </div>
-
-          {/* Right: Itinerary */}
           <div className="h-[calc(100vh-160px)] overflow-y-auto rounded-xl border border-border bg-card p-6 shadow-sm">
             <TripItinerary trip={trip} />
           </div>
