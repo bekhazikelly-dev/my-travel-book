@@ -1,30 +1,41 @@
 import { useQuery } from "@tanstack/react-query";
-import { Cloud, Sun, CloudRain, CloudSnow, CloudLightning, Thermometer } from "lucide-react";
+import { Cloud, Sun, CloudRain, CloudSnow, CloudLightning, Thermometer, ExternalLink } from "lucide-react";
 
-interface WeatherData {
-  temp: number;
+interface DayWeather {
+  date: string;
+  tempMax: number;
+  tempMin: number;
+  code: number;
   description: string;
   icon: string;
 }
 
+interface WeatherData {
+  forecast: DayWeather[];
+  city: string;
+}
+
 const fetchWeather = async (city: string): Promise<WeatherData> => {
+  const coords = CITY_COORDS[city] || { lat: 37.98, lng: 23.73 };
   const res = await fetch(
-    `https://api.open-meteo.com/v1/forecast?latitude=${CITY_COORDS[city]?.lat ?? 37.98}&longitude=${CITY_COORDS[city]?.lng ?? 23.73}&current=temperature_2m,weather_code&timezone=auto`
+    `https://api.open-meteo.com/v1/forecast?latitude=${coords.lat}&longitude=${coords.lng}&daily=weather_code,temperature_2m_max,temperature_2m_min&timezone=auto&forecast_days=7`
   );
   const data = await res.json();
-  const code = data.current?.weather_code ?? 0;
-  return {
-    temp: Math.round(data.current?.temperature_2m ?? 0),
-    description: weatherCodeToText(code),
-    icon: weatherCodeToIcon(code),
-  };
+  const forecast = data.daily?.time?.map((date: string, index: number) => ({
+    date,
+    tempMax: Math.round(data.daily.temperature_2m_max[index] ?? 0),
+    tempMin: Math.round(data.daily.temperature_2m_min[index] ?? 0),
+    code: data.daily.weather_code[index] ?? 0,
+    description: weatherCodeToText(data.daily.weather_code[index] ?? 0),
+    icon: weatherCodeToIcon(data.daily.weather_code[index] ?? 0),
+  })) ?? [];
+  return { forecast, city };
 };
 
 const CITY_COORDS: Record<string, { lat: number; lng: number }> = {
   Athens: { lat: 37.9755, lng: 23.7348 },
-  Bali: { lat: -8.4095, lng: 115.1889 },
-  Santorini: { lat: 36.3932, lng: 25.4615 },
-  "Cusco & Machu Picchu": { lat: -13.5319, lng: -71.9675 },
+  Lebanon: { lat: 33.8547, lng: 35.8623 },
+  Mallorca: { lat: 39.6953, lng: 3.0176 },
 };
 
 const weatherCodeToText = (code: number): string => {
@@ -68,22 +79,53 @@ const WeatherWidget = ({ city }: WeatherWidgetProps) => {
     return (
       <div className="flex items-center gap-2 rounded-lg bg-accent px-3 py-2">
         <Thermometer className="h-4 w-4 animate-pulse text-muted-foreground" />
-        <span className="font-body text-sm text-muted-foreground">Loading…</span>
+        <span className="font-body text-sm text-muted-foreground">Loading weather…</span>
       </div>
     );
   }
 
-  const WeatherIcon = IconMap[data.icon] ?? Cloud;
+  const weatherLink = `https://open-meteo.com/en/forecast/${CITY_COORDS[city]?.lat},${CITY_COORDS[city]?.lng}`;
 
   return (
-    <div className="flex items-center gap-2.5 rounded-lg bg-accent px-4 py-2">
-      <WeatherIcon className="h-5 w-5 text-primary" />
-      <div className="text-right">
-        <p className="font-display text-lg font-semibold leading-none text-foreground">
-          {data.temp}°C
-        </p>
-        <p className="font-body text-xs text-muted-foreground">{data.description}</p>
+    <div className="rounded-lg bg-accent p-4">
+      <div className="mb-3 flex items-center justify-between">
+        <h3 className="font-display text-lg font-semibold text-foreground">7-Day Forecast</h3>
+        <a
+          href={weatherLink}
+          target="_blank"
+          rel="noopener noreferrer"
+          title={`View detailed weather for ${city}`}
+          className="group rounded-lg bg-primary/10 p-1.5 text-primary transition-colors hover:bg-primary/20"
+        >
+          <ExternalLink className="h-4 w-4" />
+        </a>
       </div>
+      
+      <a
+        href={weatherLink}
+        target="_blank"
+        rel="noopener noreferrer"
+        className="grid grid-cols-7 gap-2 transition-opacity hover:opacity-80"
+      >
+        {data.forecast.map((day) => {
+          const WeatherIcon = IconMap[day.icon] ?? Cloud;
+          const dayName = new Date(day.date).toLocaleDateString("en-US", { weekday: "short" });
+          
+          return (
+            <div
+              key={day.date}
+              className="rounded-lg border border-border bg-background p-2 text-center transition-colors hover:bg-primary/5"
+            >
+              <p className="font-body text-xs font-semibold text-foreground">{dayName}</p>
+              <WeatherIcon className="mx-auto my-1 h-4 w-4 text-primary" />
+              <div className="space-y-0.5">
+                <p className="font-display text-sm font-bold text-foreground">{day.tempMax}°</p>
+                <p className="font-body text-xs text-muted-foreground">{day.tempMin}°</p>
+              </div>
+            </div>
+          );
+        })}
+      </a>
     </div>
   );
 };
