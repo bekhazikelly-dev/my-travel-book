@@ -40,9 +40,9 @@ export const trips: Trip[] = [
     destination: "Athens",
     country: "Greece",
     dates: "Mar 26 – Mar 29, 2026",
-    status: "upcoming",
+    status: "Upcoming",
     image: athensImg,
-    description: "A girls' weekend of rooftop dining, Acropolis exploring, beach vibes, and spa retreats in the heart of Athens.",
+    description: "Lynn's Bachlorette.",
     homeBase: {
       label: "House",
       url: "https://www.google.com/maps/place/Iofontos+2,+Athina+116+34,+Greece/@37.9696446,23.7471297,17.1z/data=!4m6!3m5!1s0x14a1bd42def7dacf:0x781b0be1af04602a!8m2!3d37.9712555!4d23.7500953!16s%2Fg%2F11sxy6ph22?entry=ttu&g_ep=EgoyMDI2MDMxOC4xIKXMDSoASAFQAw%3D%3D",
@@ -50,7 +50,7 @@ export const trips: Trip[] = [
     itinerary: [
       {
         day: 1,
-        title: "Arrival & Rooftop Magic 🌆",
+        title: "Sister's day 🌞",
         activities: [
           "3:30 PM — Late lunch at Mavro Provato (modern Greek meze)",
           "5:00 PM — Golden hour stroll through National Garden",
@@ -61,31 +61,30 @@ export const trips: Trip[] = [
       },
       {
         day: 2,
-        title: "Culture, Kebabs & Cocktails 🏛️",
+        title: "Culture, Food & Cocktails 🍸",
         activities: [
           "9:30 AM — Breakfast at KUDU Coffee Shop",
           "11:00 AM — Explore the Acropolis Museum",
           "1:00 PM — Legendary kebab lunch at O Thanasis",
           "3:00 PM — Café break at Melina Mercouri Café",
           "9:00 PM — Dinner at Oroscopo Restaurant",
-          "11:00 PM — Bar crawl: Hitchcocktales → Hippy3 → Secta Bar",
+          "11:00 PM — Bar crawl: Hitchcocktales → Hippy3 → Secta Bar → FRED",
         ],
       },
       {
         day: 3,
-        title: "Art, Food & Spa Day 🕯️",
+        title: "Art, Food & Spa Day 🎨",
         activities: [
-          "10:30 AM — Brunch at Ohh Boy (banoffee pie!)",
-          "1:00 PM — National Museum of Contemporary Art",
-          "3:00 PM — Seaside vibes at FRED",
-          "4:30 PM — Cocktails at Peggy Sue",
-          "5:30 PM — Massage retreat",
+          "10:00 AM — Brunch at Ohh Boy (banoffee pie!)",
+          "12:00 PM — National Museum of Contemporary Art",
+          "2:00 PM — coffee at Peggy Sue",
+          "3:30 PM — Massage retreat - Devine Spa",
           "8:00 PM — Fancy dinner at THE BOTANY (reservation, views of Temple of Zeus)",
         ],
       },
       {
         day: 4,
-        title: "Final Sips & Departure ☕",
+        title: "See you later, Athens! ☕",
         activities: [
           "7:30 AM — Last coffee at KROSS Coffee Roasters, Pangrati",
           "9:00 AM — Departure",
@@ -109,6 +108,7 @@ export const trips: Trip[] = [
       { name: "National Museum of Contemporary Art", lat: 37.9630008, lng: 23.7253443, emoji: "🎨", day: 3, url: "https://www.google.com/maps/place/National+Museum+of+Contemporary+Art/@37.9630008,23.7253443" },
       { name: "FRED", lat: 37.9456174, lng: 23.7106656, emoji: "🍹", day: 3, url: "https://www.google.com/maps/place/Fred/@37.9456174,23.7106656" },
       { name: "Peggy Sue", lat: 37.9539409, lng: 23.7151041, emoji: "🍸", day: 3, url: "https://www.google.com/maps/place/Peggy+Sue/@37.9539409,23.7151041" },
+      { name: "Devine Spa", lat: 37.9788272, lng: 23.7294645, emoji: "💆", day: 3, url: "https://www.google.com/maps?cid=6338285055770001958&g_mp=Cidnb29nbGUubWFwcy5wbGFjZXMudjEuUGxhY2VzLlNlYXJjaFRleHQ" },
       { name: "THE BOTANY", lat: 37.9693908, lng: 23.7313817, emoji: "🍷", day: 3, url: "https://www.google.com/maps/place/The+Botany+Roof+Garden+at+Acropolis/@37.9693908,23.7313817" },
       { name: "KROSS Coffee Roasters", lat: 37.9670, lng: 23.7500, emoji: "☕", day: 4 },
     ],
