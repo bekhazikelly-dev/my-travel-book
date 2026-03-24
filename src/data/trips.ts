@@ -114,4 +114,134 @@ export const trips: Trip[] = [
       { name: "KROSS Coffee Roasters", lat: 37.9670, lng: 23.7500, emoji: "☕", day: 4 },
     ],
   },
+  {
+    id: "mallorca-2025",
+    destination: "Mallorca",
+    country: "Spain",
+    dates: "May 1 – May 10, 2025",
+    status: "upcoming",
+    image: mallorcaImg,
+    description: "Palma & Alcúdia — 10 days of sun, steak & sea.",
+    homeBase: {
+      label: "Hotel Palma",
+      url: "https://www.google.com/maps/place/Palma,+Balearic+Islands,+Spain",
+    },
+    itinerary: [
+      {
+        day: 1,
+        title: "Arrival & Harbor Views 🌆",
+        activities: [
+          "2:00 PM — Check into hotel in Palma Old Town",
+          "4:30 PM — Walk through the historic La Lonja district",
+          "8:30 PM — Sunset seafood dinner at Ca n'Eduardo",
+        ],
+      },
+      {
+        day: 2,
+        title: "Coastal Biking & Old World Cocktails 🚴",
+        activities: [
+          "10:00 AM — Rent bikes for the coastal trail from Palma to Portitxol",
+          "1:00 PM — Lunch at a chiringuito along the bike path",
+          "9:00 PM — Theatrical cocktails at Bar Abaco",
+        ],
+      },
+      {
+        day: 3,
+        title: "The Meat Lover's Special 🥩",
+        activities: [
+          "11:00 AM — Explore the local markets of Santa Catalina",
+          "3:00 PM — Relaxation at a local city beach",
+          "8:30 PM — Premium steak dinner at Brasa Madre Restaurante",
+        ],
+      },
+      {
+        day: 4,
+        title: "History & High Views 🏰",
+        activities: [
+          "10:30 AM — Visit the Palma Cathedral (La Seu)",
+          "1:00 PM — Tapas crawl through the narrow alleys",
+          "5:00 PM — Hike or bike up to Bellver Castle for panoramic views",
+        ],
+      },
+      {
+        day: 5,
+        title: "Transit to the North 🚗",
+        activities: [
+          "10:00 AM — Final breakfast in Palma",
+          "12:00 PM — Drive or transfer toward the Alcúdia region",
+        ],
+      },
+      {
+        day: 6,
+        title: "Check-in & Garden Vibes 🌴",
+        activities: [
+          "2:00 PM — Check into Prinsotel Mal Pas",
+          "5:00 PM — Relax by the pool or at Sant Pere beach",
+          "8:30 PM — Dinner in the hotel's garden setting",
+        ],
+      },
+      {
+        day: 7,
+        title: "Signature Dining & Coves 🏖️",
+        activities: [
+          "11:00 AM — Swimming at the rocky coves of Mal Pas/Bonaire",
+          "1:30 PM — Casual lunch at the Bonaire Marina",
+          "8:30 PM — Fusion dinner and drinks at 5 Oceanos",
+        ],
+      },
+      {
+        day: 8,
+        title: "Beach Day & Iconic Paella 🏝️",
+        activities: [
+          "10:00 AM — Drive to the turquoise waters of Playa de Muro",
+          "2:00 PM — Lunch with your feet in the sand at Ponderosa Beach",
+        ],
+      },
+      {
+        day: 9,
+        title: "Wood-Fired Grills & Port Walks 🔥",
+        activities: [
+          "11:00 AM — Explore the medieval walls of Alcúdia Old Town",
+          "4:00 PM — Bike ride along the Port d'Alcúdia promenade",
+          "8:30 PM — Dinner at Muddy's Wood Fired Grill",
+        ],
+      },
+      {
+        day: 10,
+        title: "Final Feast ✈️",
+        activities: [
+          "10:00 AM — Last swim at the Mal Pas beaches",
+          "1:00 PM — Farewell lunch at Steak House Carabela",
+          "6:00 PM — Depart for Palma airport",
+        ],
+      },
+    ],
+    locations: [
+      // Day 1
+      { name: "La Lonja district", lat: 39.5696, lng: 2.6426, emoji: "🏛️", day: 1, url: "https://www.google.com/maps/place/La+Lonja,+Palma,+Mallorca" },
+      { name: "Ca n'Eduardo", lat: 39.5633, lng: 2.6340, emoji: "🦞", day: 1, url: "https://www.google.com/maps/place/Ca+n'Eduardo,+Palma,+Mallorca" },
+      // Day 2
+      { name: "Portitxol", lat: 39.5620, lng: 2.6595, emoji: "🚴", day: 2, url: "https://www.google.com/maps/place/Portitxol,+Palma,+Mallorca" },
+      { name: "Bar Abaco", lat: 39.5720, lng: 2.6481, emoji: "🍸", day: 2, url: "https://www.google.com/maps/place/Bar+Abaco,+Palma,+Mallorca" },
+      // Day 3
+      { name: "Santa Catalina Market", lat: 39.5733, lng: 2.6356, emoji: "🛒", day: 3, url: "https://www.google.com/maps/place/Mercat+de+Santa+Catalina,+Palma" },
+      { name: "Brasa Madre", lat: 39.5711, lng: 2.6450, emoji: "🥩", day: 3, url: "https://www.google.com/maps/place/Brasa+Madre+Restaurante,+Palma" },
+      // Day 4
+      { name: "Palma Cathedral (La Seu)", lat: 39.5672, lng: 2.6486, emoji: "⛪", day: 4, url: "https://www.google.com/maps/place/Cathedral+of+Santa+Maria+of+Palma" },
+      { name: "Bellver Castle", lat: 39.5639, lng: 2.6196, emoji: "🏰", day: 4, url: "https://www.google.com/maps/place/Bellver+Castle,+Palma" },
+      // Day 6
+      { name: "Prinsotel Mal Pas", lat: 39.8575, lng: 3.1420, emoji: "🏨", day: 6, url: "https://www.google.com/maps/place/Prinsotel+Mal+Pas" },
+      // Day 7
+      { name: "Mal Pas Coves", lat: 39.8550, lng: 3.1380, emoji: "🏖️", day: 7, url: "https://www.google.com/maps/place/Mal+Pas,+Alcudia,+Mallorca" },
+      { name: "5 Oceanos", lat: 39.8510, lng: 3.1290, emoji: "🍽️", day: 7, url: "https://www.google.com/maps/place/5+Oceanos,+Alcudia" },
+      // Day 8
+      { name: "Playa de Muro", lat: 39.8080, lng: 3.1120, emoji: "🏝️", day: 8, url: "https://www.google.com/maps/place/Playa+de+Muro,+Mallorca" },
+      { name: "Ponderosa Beach", lat: 39.7980, lng: 3.1050, emoji: "🍹", day: 8, url: "https://www.google.com/maps/place/Ponderosa+Beach,+Mallorca" },
+      // Day 9
+      { name: "Alcúdia Old Town", lat: 39.8530, lng: 3.1210, emoji: "🏛️", day: 9, url: "https://www.google.com/maps/place/Alcudia+Old+Town" },
+      { name: "Muddy's Wood Fired Grill", lat: 39.8420, lng: 3.1280, emoji: "🔥", day: 9, url: "https://www.google.com/maps/place/Muddy's+Wood+Fired+Grill,+Alcudia" },
+      // Day 10
+      { name: "Steak House Carabela", lat: 39.8490, lng: 3.1230, emoji: "🥩", day: 10, url: "https://www.google.com/maps/place/Steak+House+Carabela,+Alcudia" },
+    ],
+  },
 ];
