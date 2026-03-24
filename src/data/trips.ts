@@ -59,6 +59,9 @@ export const trips: Trip[] = [
         title: "Sisters day 🌞",
         activities: [
           "3:30 PM — Late lunch at Mavro Provato",
+          "4:00 PM — Ariston Bakery",
+          "4:00 PM — ROM COM Athens - Photobooth",
+          "4:30 PM — 72H Artisanal Bakery & Eatery Athens",
           "5:00 PM — Golden hour stroll through National Garden",
           "6:00 PM — Coffee at Numismatic Café ",
           "8:30 PM — Dinner at Hill Athens Rooftop Restaurant",
@@ -70,9 +73,11 @@ export const trips: Trip[] = [
         title: "Culture, Food & Cocktails 🍸",
         activities: [
           "9:30 AM — Breakfast at KUDU Coffee Shop",
-          "11:00 AM — Explore the Acropolis Museum",
-          "1:00 PM — Lunch at O Thanasis",
-          "3:00 PM — Café break at Melina Mercouri Café",
+          "11:00 AM — Hippy3 Breakfast",
+          "12:00 PM — Go to the Port of Piraeus",
+          "1:00 PM — Lunch at Pezoulas",
+          "3:00 PM — Dessert Traditional Bakery",
+          "4:00 PM — Coffee at Peggy Sue",
           "9:00 PM — Dinner at Oroscopo Restaurant",
           "11:00 PM — Bar crawl: Hitchcocktales → Hippy3 → Secta Bar → FRED",
         ],
@@ -82,8 +87,9 @@ export const trips: Trip[] = [
         title: "Art, Food & Spa Day 🎨",
         activities: [
           "10:00 AM — Brunch at Ohh Boy (banoffee pie!)",
-          "12:00 PM — National Museum of Contemporary Art",
-          "2:00 PM — Coffee at Peggy Sue",
+          "12:00 PM — Lunch at Manári Taverna",
+          "2:00 PM — ROM COM Athens - Photobooth",
+          "2:30 PM — Coffee at Melina Mercouri Café ",
           "3:30 PM — Massage retreat - Devine Spa",
           "8:00 PM — Dinner at THE BOTANY",
         ],
@@ -99,6 +105,7 @@ export const trips: Trip[] = [
     ],
     locations: [
       { name: "Mavro Provato", lat: 37.9685, lng: 23.7490, emoji: "🍽️", day: 1, url: "https://www.google.com/maps?rlz=1C5CHFA_enFR1137FR1137&gs_lcrp=EgZjaHJvbWUyBggAEEUYOTIJCAEQABgNGIAEMgkIAhAAGA0YgAQyCQgDEAAYDRiABDIJCAQQABgNGIAEMgkIBRAAGA0YgAQyBggGEEUYPDIGCAcQRRg80gEIMzI5OGowajSoAgCwAgE&um=1&ie=UTF-8&fb=1&gl=fr&sa=X&geocode=KcFme4xBvaEUMbqkUf69t8TA&daddr=Arrianou+33,+Athina+116+35,+Greece" },
+      { name: "ROM COM Athens - Photobooth", lat: 37.9685, lng: 23.7490, emoji: "📸", day: 1, url: "https://www.google.com/maps/place/ROM+COM+Athens+-+Photobooth/@37.9788239,23.7262912,16.03z/data=!4m14!1m7!3m6!1s0x14a1bd17e3d7762b:0x14836a7f84584371!2sMelina+Mercouri+Caf%C3%A9!8m2!3d37.9733376!4d23.7285992!16s%2Fg%2F113f_fvdf!3m5!1s0x14a1bd0004943a47:0xf41f45de61958380!8m2!3d37.9776683!4d23.7303653!16s%2Fg%2F11n3_31xvr?entry=ttu&g_ep=EgoyMDI2MDMyMi4wIKXMDSoASAFQAw%3D%3D" },
       { name: "National Garden", lat: 37.9725878, lng: 23.737433, emoji: "🌳", day: 1, url: "https://www.google.com/maps/place/Athens+National+Garden/@37.9688518,23.7283255,15z/data=!4m6!3m5!1s0x14a1bd3fbd35240d:0x8c3c56b60e730b9c!8m2!3d37.9725878!4d23.737433!16zL20vMGZkNTA0?entry=ttu&g_ep=EgoyMDI2MDMzOC4xIKXMDSoASAFQAw%3D%3D" },
       { name: "Numismatic Café", lat: 37.9780601, lng: 23.7355938, emoji: "☕", day: 1, url: "https://www.google.com/maps/place/Caf%C3%A9+%CF%83%CF%84%CE%BF%CE%BD+%CE%BA%CE%AE%CF%80%CE%BF+%CF%84%CE%BF%CF%85+%CE%9D%CE%BF%CE%BC%CE%B9%CF%83%CE%BC%CE%B1%CF%84%CE%B9%CE%BA%CE%BF%CF%8D+%CE%9C%CE%BF%CF%85%CF%83%CE%B5%CE%AF%CE%BF%CF%85/@37.9778109,23.7351073,15z/data=!4m6!3m5!1s0x14a1bd393c7ad4fb:0x7e82492be88fa664!8m2!3d37.9780601!4d23.7355938!16s%2Fg%2F11bx55pvdm?entry=ttu&g_ep=EgoyMDI2MDMzOC4xIKXMDSoASAFQAw%3D%3D" },
       { name: "Hill Athens Rooftop", lat: 37.9741935, lng: 23.7199049, emoji: "🌆", day: 1, url: "https://www.google.com/maps/place/Hill+Athens+Rooftop+Restaurant/@37.97421,23.7096266,15z/data=!3m1!4b1!4m6!3m5!1s0x14a1bd16bbfe1801:0xf76d88dde4f413cd!8m2!3d37.9741935!4d23.7199049!16s%2Fg%2F11j3wxd2l4?entry=ttu&g_ep=EgoyMDI2MDMzOC4xIKXMDSoASAFQAw%3D%3D" },
@@ -117,7 +124,11 @@ export const trips: Trip[] = [
       { name: "Devine Spa", lat: 37.9788272, lng: 23.7294645, emoji: "💆", day: 3, url: "https://www.google.com/maps?cid=6338285055770001958&g_mp=Cidnb29nbGUubWFwcy5wbGFjZXMudjEuUGxhY2VzLlNlYXJjaFRleHQ" },
       { name: "THE BOTANY", lat: 37.9693908, lng: 23.7313817, emoji: "🍷", day: 3, url: "https://www.google.com/maps/place/The+Botany+Roof+Garden+at+Acropolis/@37.9693908,23.7313817,16z/data=!3m1!4b1!4m6!3m5!1s0x14a1bd2a7cc5e78d:0xde900b307f25bb5d!8m2!3d37.9693908!4d23.7313817!16s%2Fg%2F11wr2p0rh1?entry=ttu&g_ep=EgoyMDI2MDMzOC4xIKXMDSoASAFQAw%3D%3D" },
       { name: "KROSS Coffee Roasters", lat: 37.9670, lng: 23.7500, emoji: "☕", day: 4 },
-    ],
+      { name: "Ariston Bakery", lat: 37.9670, lng: 23.7500, emoji: "☕", day: 3, url: "https://www.google.com/maps/place/Ariston/@37.9767034,23.7223651,15z/data=!3m1!4b1!4m6!3m5!1s0x14a1bd3c177d79a1:0xbff5d74f61cbaaa1!8m2!3d37.9766869!4d23.7326434!16s%2Fg%2F11b6sqpzrs?entry=ttu&g_ep=EgoyMDI2MDMxOC4xIKXMDSoASAFQAw%3D%3D" },
+      { name: "72H Artisanal Bakery & Eatery Athens", lat: 37.9670, lng: 23.7500, emoji: "☕", day: 3,url: "https://www.google.com/maps/place/72H+Artisanal+Bakery+%26+Eatery+Athens/@37.973259,23.7383688,14.71z/data=!4m6!3m5!1s0x14a1bdb03e4053ad:0x40e2cb27f470e9ae!8m2!3d37.9753015!4d23.7312744!16s%2Fg%2F11vyhzz7vd?entry=ttu&g_ep=EgoyMDI2MDMyMi4wIKXMDSoASAFQAw%3D%3D" },
+      { name: "Pezoulas", lat: 37.9670, lng: 23.7500, emoji: "☕", day: 2, url: "https://www.google.com/maps/place/Pezoulas/@37.9424404,23.6789063,16z/data=!3m1!5s0x14a1bc153aa12ca3:0x402c6b610cccbfd3!4m24!1m16!4m15!1m6!1m2!1s0x14a1bd42def7dacf:0x781b0be1af04602a!2sIofontos+2,+Athina+116+34,+Greece!2m2!1d23.7500953!2d37.9712555!1m6!1m2!1s0x14a1ebc9e7f3e9a7:0x1441791d1a927d8!2sTaverna+37,+Apollonos+40,+Vouliagmeni+166+71,+Greece!2m2!1d23.770777!2d37.8051711!3e0!3m6!1s0x14a1bc153058dd0d:0x4b26165f8f51bbd2!8m2!3d37.9411944!4d23.6897109!10e9!16s%2Fg%2F1td8v5y5?entry=ttu&g_ep=EgoyMDI2MDMxOC4xIKXMDSoASAFQAw%3D%3D" },
+      { name: "Manári Taverna", lat: 37.9670, lng: 23.7500, emoji: "☕", day: 3, url: "https://www.google.com/maps/place/Man%C3%A1ri+Taverna/@37.9792492,23.7270585,16z/data=!3m1!4b1!4m6!3m5!1s0x14a1bdef592a4a55:0x12f7f4ba104bc230!8m2!3d37.9792492!4d23.7296388!16s%2Fg%2F11wbp15m2d?entry=ttu&g_ep=EgoyMDI2MDMyMi4wIKXMDSoASAFQAw%3D%3D" },
+],
     packingList: [
       // Chaussures
       { id: "1", name: "Basket", category: "Chaussures" },
