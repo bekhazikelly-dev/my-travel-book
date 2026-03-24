@@ -14,11 +14,6 @@ const Index = () => {
         subtitle="What's Next"
         trips={upcoming}
       />
-      <TripSection
-        title="Past Journeys"
-        subtitle="Where I've Been"
-        trips={past}
-      />
       <footer className="border-t border-border py-10 text-center">
         <p className="font-body text-sm text-muted-foreground">
           © 2026 Wanderlust — A Personal Travel Journal
