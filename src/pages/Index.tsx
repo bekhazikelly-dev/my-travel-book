@@ -14,6 +14,13 @@ const Index = () => {
         subtitle="What's Next"
         trips={upcoming}
       />
+      <div className="min-h-screen bg-background">
+      <HeroSection />
+      <TripSection
+        title="Past Adventures"
+        subtitle="What I've Done"
+        trips={past}
+      />
       <footer className="border-t border-border py-10 text-center">
         <p className="font-body text-sm text-muted-foreground">
           © 2026 Trip Book — A Personal Travel Journal
