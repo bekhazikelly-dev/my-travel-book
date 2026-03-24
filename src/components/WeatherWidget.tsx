@@ -87,17 +87,17 @@ const WeatherWidget = ({ city }: WeatherWidgetProps) => {
   const weatherLink = `https://open-meteo.com/en/forecast/${CITY_COORDS[city]?.lat},${CITY_COORDS[city]?.lng}`;
 
   return (
-    <div className="rounded-lg bg-accent p-4">
+    <div className="rounded-lg bg-accent p-3 md:p-4">
       <div className="mb-3 flex items-center justify-between">
-        <h3 className="font-display text-lg font-semibold text-foreground">7-Day Forecast</h3>
+        <h3 className="font-display text-base md:text-lg font-semibold text-foreground">7-Day Forecast</h3>
         <a
           href={weatherLink}
           target="_blank"
           rel="noopener noreferrer"
           title={`View detailed weather for ${city}`}
-          className="group rounded-lg bg-primary/10 p-1.5 text-primary transition-colors hover:bg-primary/20"
+          className="group rounded-lg bg-primary/10 p-1 md:p-1.5 text-primary transition-colors hover:bg-primary/20"
         >
-          <ExternalLink className="h-4 w-4" />
+          <ExternalLink className="h-3.5 w-3.5 md:h-4 md:w-4" />
         </a>
       </div>
       
@@ -105,7 +105,7 @@ const WeatherWidget = ({ city }: WeatherWidgetProps) => {
         href={weatherLink}
         target="_blank"
         rel="noopener noreferrer"
-        className="grid grid-cols-7 gap-2 transition-opacity hover:opacity-80"
+        className="grid grid-cols-4 md:grid-cols-7 gap-1.5 md:gap-2 transition-opacity hover:opacity-80"
       >
         {data.forecast.map((day) => {
           const WeatherIcon = IconMap[day.icon] ?? Cloud;
@@ -114,13 +114,13 @@ const WeatherWidget = ({ city }: WeatherWidgetProps) => {
           return (
             <div
               key={day.date}
-              className="rounded-lg border border-border bg-background p-2 text-center transition-colors hover:bg-primary/5"
+              className="rounded-lg border border-border bg-background p-1.5 md:p-2 text-center transition-colors hover:bg-primary/5"
             >
-              <p className="font-body text-xs font-semibold text-foreground">{dayName}</p>
-              <WeatherIcon className="mx-auto my-1 h-4 w-4 text-primary" />
+              <p className="font-body text-xs md:text-sm font-semibold text-foreground truncate">{dayName}</p>
+              <WeatherIcon className="mx-auto my-1 h-3.5 w-3.5 md:h-4 md:w-4 text-primary" />
               <div className="space-y-0.5">
-                <p className="font-display text-sm font-bold text-foreground">{day.tempMax}°</p>
-                <p className="font-body text-xs text-muted-foreground">{day.tempMin}°</p>
+                <p className="font-display text-xs md:text-sm font-bold text-foreground">{day.tempMax}°</p>
+                <p className="font-body text-xs md:text-xs text-muted-foreground">{day.tempMin}°</p>
               </div>
             </div>
           );
