@@ -112,6 +112,7 @@ export const trips: Trip[] = [
       { name: "Devine Spa", lat: 37.9788272, lng: 23.7294645, emoji: "💆", day: 3, url: "https://www.google.com/maps?cid=6338285055770001958&g_mp=Cidnb29nbGUubWFwcy5wbGFjZXMudjEuUGxhY2VzLlNlYXJjaFRleHQ" },
       { name: "THE BOTANY", lat: 37.9693908, lng: 23.7313817, emoji: "🍷", day: 3, url: "https://www.google.com/maps/place/The+Botany+Roof+Garden+at+Acropolis/@37.9693908,23.7313817,16z/data=!3m1!4b1!4m6!3m5!1s0x14a1bd2a7cc5e78d:0xde900b307f25bb5d!8m2!3d37.9693908!4d23.7313817!16s%2Fg%2F11wr2p0rh1?entry=ttu&g_ep=EgoyMDI2MDMzOC4xIKXMDSoASAFQAw%3D%3D" },
       { name: "KROSS Coffee Roasters", lat: 37.9670, lng: 23.7500, emoji: "☕", day: 4 },
+      { name: "KROSS Coffee Roasters M", lat: 37.9670, lng: 23.7500, emoji: "☕", day: 4 },
     ],
   },
   {
