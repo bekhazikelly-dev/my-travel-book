@@ -27,7 +27,7 @@ const HeroSection = () => {
             </span>
           </div>
           <h1 className="font-display text-5xl font-bold leading-tight text-primary-foreground md:text-7xl lg:text-8xl">
-            Wanderlust
+            Trip Book
           </h1>
           <p className="mt-4 max-w-md font-body text-lg font-light text-primary-foreground/80 md:text-xl">
             Every journey tells a story. Here are mine.
